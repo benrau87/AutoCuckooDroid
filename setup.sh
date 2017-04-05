@@ -85,7 +85,7 @@ bash /etc/android-studio/bin/studio.sh
 
 
 print_status "${YELLOW}Installing Cuckoo-droid...${NC}"
-export PATH=$PATH:/etc/android-studio/tools:/etc/android-studio/bin
+$ export PATH=$PATH:/etc/android-studio/tool:/etc/android-studio/build-tools/x.x.x.x/:/etc/android-studio/platform-tools
 git config --global user.email "you@example.com" &>> $logfile
 git config --global user.name "Your Name" &>> $logfile
 git clone --depth=1 https://github.com/cuckoobox/cuckoo.git cuckoo -b 1.2 &>> $logfile
