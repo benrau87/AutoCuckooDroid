@@ -4,8 +4,7 @@ if [ "$EUID" -ne 0 ]
   exit 1
 fi
 RED='\033[0;31m'
-YELLOW='\033[1;33m'
-NC='\033[0m'
+YELLOW='\033[1;33m'NC='\033[0m'
 gitdir=$PWD
 
 ##Logging setup
@@ -15,8 +14,7 @@ tee < ${logfile}.pipe $logfile &
 exec &> ${logfile}.pipe
 rm ${logfile}.pipe
 
-##Functions
-function print_status ()
+##Functionsfunction print_status ()
 {
     echo -e "\x1B[01;34m[*]\x1B[0m $1"
 }
@@ -26,8 +24,7 @@ function print_good ()
 }
 
 
-function print_error ()
-{
+function print_error (){
     echo -e "\x1B[01;31m[*]\x1B[0m $1"
 }
 
@@ -38,7 +35,6 @@ function print_notification ()
 
 function error_check
 {
-
 if [ $? -eq 0 ]; then
 	print_good "$1 successfully."
 else
@@ -101,4 +97,4 @@ cat conf-extra/processing.conf >> conf/processing.conf &>> $logfile
 cat conf-extra/reporting.conf >> conf/reporting.conf &>> $logfile
 rm -r conf-extra &>> $logfile
 echo "protobuf" >> requirements.txt &>> $logfile
-error_check 'Cuckoo Droid added'
+error_check 'Cuckoo Droid added, please reboot before execution will be completed'
