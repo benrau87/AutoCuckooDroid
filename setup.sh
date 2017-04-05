@@ -22,8 +22,7 @@ function print_status ()
 }
 
 function print_good ()
-{
-    echo -e "\x1B[01;32m[*]\x1B[0m $1"
+{    echo -e "\x1B[01;32m[*]\x1B[0m $1"
 }
 
 
@@ -33,8 +32,7 @@ function print_error ()
 }
 
 function print_notification ()
-{
-	echo -e "\x1B[01;33m[*]\x1B[0m $1"
+{	echo -e "\x1B[01;33m[*]\x1B[0m $1"
 }
 
 function error_check
@@ -88,7 +86,7 @@ bash /etc/android-studio/bin/studio.sh
 print_status "${YELLOW}Installing Cuckoo-droid...${NC}"
 chown -r cuckoo:cuckoo /root/Android/
 mv /root/Android /etc/cuckoo/
-$ export PATH=$PATH:/etc/android-studio/tool:/etc/android-studio/build-tools/x.x.x.x/:/etc/android-studio/platform-tools
+export PATH=$PATH:/etc/android-studio/tool:/etc/android-studio/build-tools/x.x.x.x/:/etc/android-studio/platform-tools
 git config --global user.email "you@example.com" &>> $logfile
 git config --global user.name "Your Name" &>> $logfile
 git clone --depth=1 https://github.com/cuckoobox/cuckoo.git cuckoo -b 1.2 &>> $logfile
