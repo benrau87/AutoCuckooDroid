@@ -35,6 +35,7 @@ function print_notification ()
 {	echo -e "\x1B[01;33m[*]\x1B[0m $1"
 }
 
+
 function error_check
 {
 
@@ -91,7 +92,7 @@ chown -R cuckoo:cuckoo /root/Android/
 mv /root/Android /etc/cuckoo/
 mv /etc/cuckoo/Android /etc/cuckoo/android-sdk-linux
 cp -r /etc/cuckoo/android-sdk-linux/Sdk/* /etc/cuckoo/android-sdk-linux/
-PATH=$PATH:/etc/cuckoo/android-sdk-linux/tools:/etc/cuckoo/android-sdk-linux/build-tools/x.x.x.x/:/etc/cuckoo/android-sdk-linux/platform-tools
+echo "export PATH=$PATH:/etc/cuckoo/android-sdk-linux/tools:/etc/cuckoo/android-sdk-linux/build-tools/x.x.x.x/:/etc/cuckoo/android-sdk-linux/platform-tools" >> /etc/profile &>> $logfile 
 git config --global user.email "you@example.com" &>> $logfile
 git config --global user.name "Your Name" &>> $logfile
 git clone --depth=1 https://github.com/cuckoobox/cuckoo.git cuckoo -b 1.2 &>> $logfile
