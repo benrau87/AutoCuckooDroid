@@ -84,8 +84,9 @@ mv android-studio /etc/
 bash /etc/android-studio/bin/studio.sh
 
 
-print_status "${YELLOW}Installing Cuckoo-droid...${NC}"
-chown -r cuckoo:cuckoo /root/Android/
+print_status "${YELLOW}Downloading Cuckoo-droid...${NC}"
+print_status "${YELLOW}When the download is complete, follow the prompts for the installation. ${NC}"
+chown -R cuckoo:cuckoo /root/Android/
 mv /root/Android /etc/cuckoo/
 mv /etc/cuckoo/Android /etc/cuckoo/android-sdk-linux
 cp -r /etc/cuckoo/android-sdk-linux/Sdk/* /etc/cuckoo/android-sdk-linux/
