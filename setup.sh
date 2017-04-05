@@ -72,7 +72,14 @@ fi
 ##BEGIN MAIN SCRIPT##
 #Pre checks: These are a couple of basic sanity checks the script does before proceeding.
 
-print_status "${YELLOW}Installing the requested files...${NC}"
+print_status "${YELLOW}Downloading Android SDK...${NC}"
+wget https://dl.google.com/dl/android/studio/ide-zips/2.3.1.0/android-studio-ide-162.3871768-linux.zip &>> $logfile
+wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip &>> $logfile
+unzip android-studio-ide-162.3871768-linux.zip &>> $logfile
+unzip tools_r25.2.3-linux.zip &>> $logfile
+mv -r tools_r25.2.3-linux $/gitdir/android-studio-ide-162.3871768-linux/ &>> $logfile
+
+print_status "${YELLOW}Installing Cuckoo-droid...${NC}"
 git config --global user.email "you@example.com" &>> $logfile
 git config --global user.name "Your Name" &>> $logfile
 git clone --depth=1 https://github.com/cuckoobox/cuckoo.git cuckoo -b 1.2 &>> $logfile
