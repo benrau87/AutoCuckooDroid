@@ -73,6 +73,7 @@ fi
 #Pre checks: These are a couple of basic sanity checks the script does before proceeding.
 
 print_status "${YELLOW}Downloading Android SDK...${NC}"
+print_status "${YELLOW}When the download is complete, follow the prompts for the installation. ${NC}"
 wget https://dl.google.com/dl/android/studio/ide-zips/2.3.1.0/android-studio-ide-162.3871768-linux.zip &>> $logfile
 #wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip &>> $logfile
 unzip android-studio-ide-162.3871768-linux.zip &>> $logfile
@@ -85,7 +86,6 @@ bash /etc/android-studio/bin/studio.sh
 
 
 print_status "${YELLOW}Downloading Cuckoo-droid...${NC}"
-print_status "${YELLOW}When the download is complete, follow the prompts for the installation. ${NC}"
 chown -R cuckoo:cuckoo /root/Android/
 mv /root/Android /etc/cuckoo/
 mv /etc/cuckoo/Android /etc/cuckoo/android-sdk-linux
