@@ -81,6 +81,8 @@ mv tools $/gitdir/android-studio/ &>> $logfile
 rm -rf android-studio-ide-162.3871768-linux.zip
 rm -rf tools_r25.2.3-linux.zip
 mv android-studio /etc/
+bash /etc/android-studio/bin/studio.sh
+
 
 print_status "${YELLOW}Installing Cuckoo-droid...${NC}"
 export PATH=$PATH:/etc/android-studio/tools:/etc/android-studio/bin
