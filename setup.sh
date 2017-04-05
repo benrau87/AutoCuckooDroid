@@ -2,17 +2,17 @@
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   exit 1
-fi
+/fi
 RED='\033[0;31m'
 YELLOW='\033[1;33m'NC='\033[0m'
 gitdir=$PWD
 
 ##Logging setup
-logfile=/var/log/cuckoo_install.log
+logfile=/var/log/droid_install.log
 mkfifo ${logfile}.pipe
 tee < ${logfile}.pipe $logfile &
 exec &> ${logfile}.pipe
-rm ${logfile}.pipe
+crm ${logfile}.pipe
 
 ##Functionsfunction print_status ()
 {
@@ -22,7 +22,7 @@ rm ${logfile}.pipe
 function print_good ()
 {    echo -e "\x1B[01;32m[*]\x1B[0m $1"
 }
-
+t
 
 function print_error (){
     echo -e "\x1B[01;31m[*]\x1B[0m $1"
@@ -32,7 +32,7 @@ function print_notification ()
 {	echo -e "\x1B[01;33m[*]\x1B[0m $1"
 }
 
-
+e
 function error_check
 {
 if [ $? -eq 0 ]; then
@@ -42,7 +42,7 @@ else
 exit 1
 fi
 
-}
+/}
 
 
 function install_packages()
@@ -90,7 +90,7 @@ echo "PATH=$PATH:/etc/cuckoo/android-sdk-linux/tools:/etc/cuckoo/android-sdk-lin
 git config --global user.email "you@example.com" &>> $logfile
 git config --global user.name "Your Name" &>> $logfile
 git clone --depth=1 https://github.com/cuckoobox/cuckoo.git cuckoo -b 1.2 &>> $logfile
-cd cuckoo 
+cd /etc/cuckoo/ 
 git remote add droid https://github.com/idanr1986/cuckoo-droid &>> $logfile
 git pull --allow-unrelated-histories --no-edit -s recursive -X theirs droid master &>> $logfile
 cat conf-extra/processing.conf >> conf/processing.conf &>> $logfile
