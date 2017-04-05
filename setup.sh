@@ -77,9 +77,13 @@ wget https://dl.google.com/dl/android/studio/ide-zips/2.3.1.0/android-studio-ide
 wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip &>> $logfile
 unzip android-studio-ide-162.3871768-linux.zip &>> $logfile
 unzip tools_r25.2.3-linux.zip &>> $logfile
-mv -r tools_r25.2.3-linux $/gitdir/android-studio-ide-162.3871768-linux/ &>> $logfile
+mv tools $/gitdir/android-studio/ &>> $logfile
+rm -rf android-studio-ide-162.3871768-linux.zip
+rm -rf tools_r25.2.3-linux.zip
+mv android-studio /etc/
 
 print_status "${YELLOW}Installing Cuckoo-droid...${NC}"
+export PATH=$PATH:/etc/android-studio/tools:/etc/android-studio/bin
 git config --global user.email "you@example.com" &>> $logfile
 git config --global user.name "Your Name" &>> $logfile
 git clone --depth=1 https://github.com/cuckoobox/cuckoo.git cuckoo -b 1.2 &>> $logfile
