@@ -83,4 +83,4 @@ cat conf-extra/processing.conf >> conf/processing.conf &>> $logfile
 cat conf-extra/reporting.conf >> conf/reporting.conf &>> $logfile
 rm -r conf-extra &>> $logfile
 echo "protobuf" >> requirements.txt &>> $logfile
-error_check 'Cuckoo Driod Added. Peace, bitch'
+error_check 'Cuckoo Droid Added. Peace, bitch'
