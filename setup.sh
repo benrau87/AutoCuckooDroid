@@ -47,6 +47,7 @@ fi
 
 }
 
+
 function install_packages()
 {
 
@@ -86,6 +87,8 @@ bash /etc/android-studio/bin/studio.sh
 print_status "${YELLOW}Installing Cuckoo-droid...${NC}"
 chown -r cuckoo:cuckoo /root/Android/
 mv /root/Android /etc/cuckoo/
+mv /etc/cuckoo/Android /etc/cuckoo/android-sdk-linux
+cp -r /etc/cuckoo/android-sdk-linux/Sdk/* /etc/cuckoo/android-sdk-linux/
 export PATH=$PATH:/etc/android-studio/tool:/etc/android-studio/build-tools/x.x.x.x/:/etc/android-studio/platform-tools
 git config --global user.email "you@example.com" &>> $logfile
 git config --global user.name "Your Name" &>> $logfile
