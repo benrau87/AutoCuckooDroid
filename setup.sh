@@ -74,12 +74,12 @@ fi
 
 print_status "${YELLOW}Downloading Android SDK...${NC}"
 wget https://dl.google.com/dl/android/studio/ide-zips/2.3.1.0/android-studio-ide-162.3871768-linux.zip &>> $logfile
-wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip &>> $logfile
+#wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip &>> $logfile
 unzip android-studio-ide-162.3871768-linux.zip &>> $logfile
-unzip tools_r25.2.3-linux.zip &>> $logfile
-mv tools $/gitdir/android-studio/ &>> $logfile
+#unzip tools_r25.2.3-linux.zip &>> $logfile
+#mv tools $/gitdir/android-studio/ &>> $logfile
 rm -rf android-studio-ide-162.3871768-linux.zip
-rm -rf tools_r25.2.3-linux.zip
+#rm -rf tools_r25.2.3-linux.zip
 mv android-studio /etc/
 bash /etc/android-studio/bin/studio.sh
 
