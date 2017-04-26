@@ -90,7 +90,7 @@ echo "PATH=$PATH:/etc/cuckoo/android-sdk-linux/tools:/etc/cuckoo/android-sdk-lin
 git config --global user.email "you@example.com" &>> $logfile
 git config --global user.name "Your Name" &>> $logfile
 git clone --depth=1 https://github.com/cuckoobox/cuckoo.git cuckoo -b 1.2 &>> $logfile
-cd /etc/cuckoo/ 
+cd /home/cuckoo/.cuckoo/ 
 git remote add droid https://github.com/idanr1986/cuckoo-droid &>> $logfile
 git pull --allow-unrelated-histories --no-edit -s recursive -X theirs droid master &>> $logfile
 cat conf-extra/processing.conf >> conf/processing.conf &>> $logfile
